@@ -7,13 +7,13 @@ EXTERNAL-MARKET value — or it **refuses** (a wide band, or insufficient-eviden
 when the evidence can't defend a point. No single source is trusted; the
 ProvenanceGovernor is the product.
 
-Portable `.cljc` (JVM / SCI / ClojureScript / GraalVM) on this workspace's
+Portable `.cljk` (JVM / SCI / ClojureScript / GraalVM) on this workspace's
 [`langgraph`](https://github.com/kotoba-lang/langgraph) /
 [`langchain`](https://github.com/kotoba-lang/langchain) layering;
 I/O is injected (no hard HTTP/JSON dep). It also ships the optional **actor**
 (`kenchi.parcel` = a langgraph-clj StateGraph, 1 run = 1 valuation) and publishes
 over the same ATProto/Aozora + Murakumo surfaces as
-[`toritate`](../../etzhayyim/root/20-actors/toritate). It is the engine behind the
+[`toritate`](https://github.com/cloud-itonami/toritate). It is the engine behind the
 published etzhayyim actor [`com-etzhayyim-kenchi`](https://github.com/etzhayyim/com-etzhayyim-kenchi).
 
 ## As a library
@@ -117,10 +117,10 @@ with many comps) is refused.
 | `src/kenchi/fusion.cljk` | **ValuationEngine** — robust multi-source ensemble + CI; per-source reliability (flywheel-tuned) |
 | `src/kenchi/governor.cljk` | **ProvenanceGovernor / LicenseGovernor** — N-source gate, ToS clear, outlier reject, MRV |
 | `src/kenchi/parcel.cljk` | **ParcelActor** — the langgraph-clj StateGraph (1 run = 1 valuation) |
-| `src/kenchi/publish.cljc` | **PublishActor** — ATProto PDS `putRecord` client (kotoba-db I/O idiom), wire-level license gate |
+| `src/kenchi/publish.cljk` | **PublishActor** — ATProto PDS `putRecord` client (`langchain.kotoba-db` I/O idiom), wire-level license gate |
 | `src/kenchi/flywheel.cljk` | **ModelFlywheelActor** — backtest vs realized sales → recalibrate reliability |
-| `src/kenchi/sim.cljc` / `live.clj` | mock demo / live-wiring demo |
-| `test/kenchi/*_test.clj` | publish invariant + ingest/publish/flywheel contracts |
+| `src/kenchi/sim.cljk` / `live.cljk` | mock demo / live-wiring demo |
+| `test/kenchi/*_test.cljk` | publish invariant + ingest/publish/flywheel contracts |
 | `lexicons/com/junkawasaki/kenchi/valuation.json` | the published record schema (ATProto lexicon) |
 | `valuation/v1-sources.json` · `valuation/fixtures/*.edn` | source-registry + reliability priors · offline adapter fixtures |
 
